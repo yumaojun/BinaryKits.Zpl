@@ -21,6 +21,7 @@ namespace BinaryKits.Zpl.Viewer
                 new AztecBarcodeElementDrawer(),
                 new Barcode128ElementDrawer(),
                 new Barcode39ElementDrawer(),
+                new Code11BarcodeElementDrawer(),
                 new Barcode93ElementDrawer(),
                 new BarcodeEAN13ElementDrawer(),
                 new BarcodeUpcAElementDrawer(),

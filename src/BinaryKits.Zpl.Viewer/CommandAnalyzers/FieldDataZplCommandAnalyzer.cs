@@ -59,6 +59,10 @@ namespace BinaryKits.Zpl.Viewer.CommandAnalyzers
                 {
                     return new ZplBarcode39(text, x, y, code39.Height, moduleWidth, wideBarToNarrowBarWidthRatio, code39.FieldOrientation, hexadecimalIndicator, code39.PrintInterpretationLine, code39.PrintInterpretationLineAboveCode, code39.Mod43CheckDigit, bottomToTop, useDefaultPosition);
                 }
+                else if (virtualPrinter.NextElementFieldData is Code11BarcodeFieldData code11)
+                {
+                    return new ZplBarcodeCode11(text, x, y, code11.Height, moduleWidth, wideBarToNarrowBarWidthRatio, code11.FieldOrientation, hexadecimalIndicator, code11.PrintInterpretationLine, code11.PrintInterpretationLineAboveCode, code11.CheckDigit, bottomToTop, useDefaultPosition);
+                }
                 else if (virtualPrinter.NextElementFieldData is Code93BarcodeFieldData code93)
                 {
                     return new ZplBarcode93(text, x, y, code93.Height, moduleWidth, wideBarToNarrowBarWidthRatio, code93.FieldOrientation, hexadecimalIndicator, code93.PrintInterpretationLine, code93.PrintInterpretationLineAboveCode, code93.PrintCheckDigit, bottomToTop, useDefaultPosition);
