@@ -25,11 +25,11 @@ namespace BinaryKits.Zpl.Label.UnitTest
         }
 
         [TestMethod]
-        public void BarcodeCode11()
+        public void Barcode11()
         {
             var elements = new List<ZplElementBase>
             {
-                new ZplBarcodeCode11("123-45", 100, 100)
+                new ZplBarcode11("123-45", 100, 100)
             };
 
             var renderEngine = new ZplEngine(elements);
@@ -38,6 +38,22 @@ namespace BinaryKits.Zpl.Label.UnitTest
             Debug.WriteLine(output);
             Assert.IsNotNull(output);
             Assert.AreEqual("^XA\n^LH0,0\n\n^FO100,100\n^BY2,3\n^B1N,N,100,Y,N\n^FD123-45^FS\n^XZ", output);
+        }
+
+        [TestMethod]
+        public void Barcode49()
+        {
+            var elements = new List<ZplElementBase>
+            {
+                new ZplBarcode49("12345ABCDE", 100, 100)
+            };
+
+            var renderEngine = new ZplEngine(elements);
+            var output = renderEngine.ToZplString(new ZplRenderOptions { AddEmptyLineBeforeElementStart = true });
+
+            Debug.WriteLine(output);
+            Assert.IsNotNull(output);
+            Assert.AreEqual("^XA\n^LH0,0\n\n^FO100,100\n^BY2\n^B4N,20,N,A\n^FD12345ABCDE^FS\n^XZ", output);
         }
 
         [TestMethod]

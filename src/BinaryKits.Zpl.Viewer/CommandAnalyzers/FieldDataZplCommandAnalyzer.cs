@@ -61,7 +61,11 @@ namespace BinaryKits.Zpl.Viewer.CommandAnalyzers
                 }
                 else if (virtualPrinter.NextElementFieldData is Code11BarcodeFieldData code11)
                 {
-                    return new ZplBarcodeCode11(text, x, y, code11.Height, moduleWidth, wideBarToNarrowBarWidthRatio, code11.FieldOrientation, hexadecimalIndicator, code11.PrintInterpretationLine, code11.PrintInterpretationLineAboveCode, code11.CheckDigit, bottomToTop, useDefaultPosition);
+                    return new ZplBarcode11(text, x, y, code11.Height, moduleWidth, wideBarToNarrowBarWidthRatio, code11.FieldOrientation, hexadecimalIndicator, code11.PrintInterpretationLine, code11.PrintInterpretationLineAboveCode, code11.CheckDigit, bottomToTop, useDefaultPosition);
+                }
+                else if (virtualPrinter.NextElementFieldData is Code49BarcodeFieldData code49)
+                {
+                    return new ZplBarcode49(text, x, y, code49.Height, moduleWidth, code49.Mode, code49.PrintInterpretationLine, code49.FieldOrientation, hexadecimalIndicator, bottomToTop, useDefaultPosition);
                 }
                 else if (virtualPrinter.NextElementFieldData is Code93BarcodeFieldData code93)
                 {

@@ -5,7 +5,7 @@ namespace BinaryKits.Zpl.Label.Elements
     /// <summary>
     /// Code 11 Barcode
     /// </summary>
-    public class ZplBarcodeCode11 : ZplBarcode
+    public class ZplBarcode11 : ZplBarcode
     {
         public bool CheckDigit { get; private set; }
 
@@ -25,7 +25,7 @@ namespace BinaryKits.Zpl.Label.Elements
         /// <param name="checkDigit"></param>
         /// <param name="bottomToTop"></param>
         /// <param name="useDefaultPosition"></param>
-        public ZplBarcodeCode11(
+        public ZplBarcode11(
             string content,
             int positionX,
             int positionY,

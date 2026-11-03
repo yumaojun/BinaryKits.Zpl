@@ -24,6 +24,7 @@ namespace BinaryKits.Zpl.Viewer
             new ChangeAlphanumericDefaultFontZplCommandAnalyzer(),
             new ChangeInternationalFontCommandAnalyzer(),
             new Code11BarcodeZplCommandAnalyzer(),
+            new Code49BarcodeZplCommandAnalyzer(),
             new Code39BarcodeZplCommandAnalyzer(),
             new Code93BarcodeZplCommandAnalyzer(),
             new Code128BarcodeZplCommandAnalyzer(),
